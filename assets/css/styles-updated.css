@@ -1,0 +1,758 @@
+/* Atualização da paleta de cores baseada no Instagram da Wachholz */
+:root {
+    /* Cores principais - atualizadas para refletir a estética do Instagram */
+    --cor-preto: #000000;
+    --cor-branco: #ffffff;
+    --cor-cinza-claro: #f8f8f8;
+    --cor-cinza-medio: #e0e0e0;
+    --cor-bordo: #6d2e46;
+    --cor-marrom: #5d4037;
+    --cor-bege: #d7ccc8;
+    
+    /* Cores funcionais */
+    --cor-texto: var(--cor-preto);
+    --cor-texto-claro: #333333;
+    --cor-fundo: var(--cor-branco);
+    --cor-destaque: var(--cor-bordo);
+    --cor-destaque-hover: var(--cor-marrom);
+    
+    /* Tipografia */
+    --fonte-titulo: 'Montserrat', sans-serif;
+    --fonte-corpo: 'Montserrat', sans-serif;
+    
+    /* Espaçamentos */
+    --espacamento-xs: 0.5rem;
+    --espacamento-s: 1rem;
+    --espacamento-m: 2rem;
+    --espacamento-l: 4rem;
+    --espacamento-xl: 6rem;
+    
+    /* Transições */
+    --transicao-padrao: all 0.3s ease;
+    --transicao-lenta: all 0.6s ease;
+}
+
+/* Estilos gerais atualizados */
+body {
+    font-family: var(--fonte-corpo);
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+    overflow-x: hidden;
+    letter-spacing: 0.02em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fonte-titulo);
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: var(--espacamento-s);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: var(--espacamento-s);
+}
+
+h3 {
+    font-size: 1.75rem;
+    margin-bottom: var(--espacamento-xs);
+}
+
+p {
+    margin-bottom: var(--espacamento-s);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transicao-padrao);
+    font-weight: 500;
+}
+
+a:hover {
+    color: var(--cor-destaque);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--espacamento-m) 0;
+}
+
+.separator {
+    width: 40px;
+    height: 2px;
+    background-color: var(--cor-destaque);
+    margin: var(--espacamento-s) 0 var(--espacamento-m);
+}
+
+.intro-text {
+    font-family: var(--fonte-titulo);
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: var(--espacamento-m);
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+}
+
+/* Header atualizado */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.95);
+    transition: var(--transicao-padrao);
+    padding: var(--espacamento-s) 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+.logo {
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 100%;
+    width: auto;
+    transition: var(--transicao-padrao);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: var(--espacamento-m);
+}
+
+nav ul li a {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    padding: 5px 0;
+    color: var(--cor-texto);
+    font-weight: 500;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--cor-destaque);
+    transition: var(--transicao-padrao);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.nav-destaque {
+    border: 1px solid var(--cor-destaque);
+    padding: 8px 16px;
+    border-radius: 0;
+}
+
+.nav-destaque:hover {
+    background-color: var(--cor-destaque);
+    color: var(--cor-branco);
+}
+
+/* Hero Section atualizada */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: var(--cor-preto);
+    color: var(--cor-branco);
+    overflow: hidden;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.hero-content {
+    width: 50%;
+    padding-right: var(--espacamento-l);
+}
+
+.hero h1 {
+    margin-bottom: var(--espacamento-m);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.manifesto {
+    font-family: var(--fonte-titulo);
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: var(--espacamento-l);
+    letter-spacing: 0.05em;
+}
+
+.hero-image {
+    width: 50%;
+    height: 80vh;
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.cta-wrapper {
+    margin-top: var(--espacamento-m);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: transparent;
+    border: 1px solid var(--cor-branco);
+    color: var(--cor-branco);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: var(--transicao-padrao);
+    font-weight: 500;
+}
+
+.cta-button:hover {
+    background-color: var(--cor-branco);
+    color: var(--cor-preto);
+}
+
+/* Seções atualizadas */
+.sobre, .para-quem, .servicos, .depoimentos, .contato {
+    padding: var(--espacamento-xl) 0;
+}
+
+.sobre {
+    background-color: var(--cor-branco);
+}
+
+.para-quem {
+    background-color: var(--cor-cinza-claro);
+}
+
+.servicos {
+    background-color: var(--cor-branco);
+}
+
+.depoimentos {
+    background-color: var(--cor-preto);
+    color: var(--cor-branco);
+}
+
+.contato {
+    background-color: var(--cor-cinza-claro);
+}
+
+/* Grid de serviços atualizado */
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--espacamento-m);
+    margin: var(--espacamento-l) 0;
+}
+
+.servico-card {
+    background-color: var(--cor-branco);
+    padding: var(--espacamento-m);
+    border: 1px solid var(--cor-cinza-medio);
+    transition: var(--transicao-padrao);
+    text-align: left;
+}
+
+.servico-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    border-color: var(--cor-destaque);
+}
+
+/* Depoimentos atualizados */
+.depoimento-texto {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: var(--espacamento-m);
+    font-weight: 300;
+    letter-spacing: 0.03em;
+}
+
+.depoimento-autor {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* Formulário atualizado */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1rem;
+    font-family: var(--fonte-corpo);
+    color: var(--cor-texto);
+    border: none;
+    border-bottom: 1px solid var(--cor-cinza-medio);
+    background-color: transparent;
+    outline: none;
+    transition: var(--transicao-padrao);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--cor-destaque);
+}
+
+.submit-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--cor-destaque);
+    color: var(--cor-branco);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+    margin-top: var(--espacamento-s);
+    font-weight: 500;
+}
+
+.submit-button:hover {
+    background-color: var(--cor-destaque-hover);
+}
+
+/* Footer atualizado */
+footer {
+    background-color: var(--cor-preto);
+    color: var(--cor-branco);
+    padding: var(--espacamento-l) 0;
+}
+
+.footer-tagline {
+    font-family: var(--fonte-titulo);
+    font-size: 1.2rem;
+    margin-bottom: var(--espacamento-m);
+    letter-spacing: 0.05em;
+    font-weight: 300;
+}
+
+/* Produtos - Atualização para grid do Instagram */
+.produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin: var(--espacamento-l) 0;
+}
+
+.produto-card {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+}
+
+.produto-imagem {
+    height: 100%;
+    width: 100%;
+}
+
+.produto-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.produto-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.7) 100%);
+    opacity: 0;
+    transition: var(--transicao-padrao);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.produto-card:hover .produto-overlay {
+    opacity: 1;
+}
+
+.produto-titulo {
+    color: var(--cor-branco);
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.produto-categoria {
+    color: var(--cor-branco);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Animações e efeitos visuais */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .servicos-grid,
+    .produtos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+    
+    h2 {
+        font-size: 2.2rem;
+    }
+    
+    .hero .container,
+    .sobre .container,
+    .para-quem .container,
+    .contato .container {
+        flex-direction: column;
+    }
+    
+    .hero-content,
+    .hero-image,
+    .section-content,
+    .section-image,
+    .contato-content,
+    .contato-image {
+        width: 100%;
+    }
+    
+    .servicos-grid,
+    .produtos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Novos estilos para grid de Instagram */
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin: var(--espacamento-l) 0;
+}
+
+.instagram-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+}
+
+.instagram-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.instagram-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.7) 100%);
+    opacity: 0;
+    transition: var(--transicao-padrao);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    color: var(--cor-branco);
+}
+
+.instagram-item:hover .instagram-overlay {
+    opacity: 1;
+}
+
+.instagram-caption {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    font-weight: 300;
+    letter-spacing: 0.03em;
+}
+
+.instagram-link {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--cor-branco);
+    font-weight: 500;
+}
+
+/* Seção de depoimentos atualizada para estilo Instagram */
+.depoimentos-slider {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--cor-preto);
+    padding: var(--espacamento-m);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.depoimento-slide {
+    padding: var(--espacamento-m) 0;
+    text-align: left;
+}
+
+.depoimento-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--espacamento-s);
+}
+
+.depoimento-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.depoimento-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.depoimento-info {
+    flex: 1;
+}
+
+.depoimento-nome {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 2px;
+    letter-spacing: 0.05em;
+}
+
+.depoimento-data {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.depoimento-rating {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.depoimento-star {
+    color: #ffb400;
+    margin-right: 2px;
+}
+
+/* Botão de estilo Instagram */
+.instagram-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    background-color: var(--cor-preto);
+    color: var(--cor-branco);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    transition: var(--transicao-padrao);
+    margin-top: var(--espacamento-m);
+}
+
+.instagram-button:hover {
+    background-color: #333;
+    color: var(--cor-branco);
+}
+
+.instagram-button-icon {
+    margin-right: 10px;
+}
+
+/* Ajustes para melhorar a nitidez e alegria dos textos */
+p, .intro-text, .manifesto {
+    font-weight: 400;
+    color: #333;
+    line-height: 1.8;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #000;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--espacamento-m);
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--cor-destaque);
+}
+
+/* Ajustes para evitar conflitos visuais com links */
+a.text-link {
+    color: var(--cor-destaque);
+    position: relative;
+    padding-bottom: 2px;
+}
+
+a.text-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--cor-destaque);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+a.text-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Espaçamento e ritmo visual melhorados */
+section {
+    padding: 100px 0;
+}
+
+.container {
+    padding: 0;
+}
+
+.row {
+    margin-bottom: 60px;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mb-1 {
+    margin-bottom: 10px;
+}
+
+.mb-2 {
+    margin-bottom: 20px;
+}
+
+.mb-3 {
+    margin-bottom: 30px;
+}
+
+.mb-4 {
+    margin-bottom: 40px;
+}
+
+.mb-5 {
+    margin-bottom: 50px;
+}
+
+/* Ajustes para melhorar a legibilidade em fundos escuros */
+.bg-dark {
+    background-color: var(--cor-preto);
+    color: var(--cor-branco);
+}
+
+.bg-dark p, 
+.bg-dark .intro-text {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.bg-dark h1,
+.bg-dark h2,
+.bg-dark h3,
+.bg-dark h4,
+.bg-dark h5,
+.bg-dark h6 {
+    color: var(--cor-branco);
+}
+
+/* Ajustes para melhorar a legibilidade em fundos claros */
+.bg-light {
+    background-color: var(--cor-cinza-claro);
+}
+
+.bg-white {
+    background-color: var(--cor-branco);
+}

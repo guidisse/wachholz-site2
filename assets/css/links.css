@@ -1,0 +1,279 @@
+/* Estilos específicos para links e navegação - evitando conflitos visuais */
+
+/* Links de texto */
+.text-link {
+    color: var(--cor-destaque);
+    position: relative;
+    display: inline-block;
+    font-weight: 500;
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.text-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--cor-destaque);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.text-link:hover {
+    color: var(--cor-destaque-hover);
+}
+
+.text-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Links de navegação principal */
+nav ul li a {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    padding: 8px 0;
+    color: var(--cor-texto);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--cor-destaque);
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--cor-destaque);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Botões de chamada para ação */
+.cta-button, 
+.instagram-button, 
+.submit-button {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.cta-button::before, 
+.instagram-button::before, 
+.submit-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+.cta-button:hover::before, 
+.instagram-button:hover::before, 
+.submit-button:hover::before {
+    left: 0;
+}
+
+/* Botão CTA principal */
+.cta-button {
+    background-color: transparent;
+    border: 1px solid var(--cor-branco);
+    color: var(--cor-branco);
+}
+
+.cta-button:hover {
+    background-color: var(--cor-branco);
+    color: var(--cor-preto);
+}
+
+/* Botão Instagram */
+.instagram-button {
+    background-color: var(--cor-destaque);
+    color: var(--cor-branco);
+    border: 1px solid var(--cor-destaque);
+}
+
+.instagram-button:hover {
+    background-color: var(--cor-destaque-hover);
+    border-color: var(--cor-destaque-hover);
+}
+
+/* Botão de envio de formulário */
+.submit-button {
+    background-color: var(--cor-destaque);
+    color: var(--cor-branco);
+    border: 1px solid var(--cor-destaque);
+    width: auto;
+}
+
+.submit-button:hover {
+    background-color: var(--cor-destaque-hover);
+    border-color: var(--cor-destaque-hover);
+}
+
+/* Links de redes sociais no rodapé */
+.social-link {
+    color: var(--cor-branco);
+    margin-right: 20px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
+}
+
+.social-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--cor-branco);
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--cor-branco);
+    opacity: 0.8;
+}
+
+.social-link:hover::after {
+    width: 100%;
+}
+
+/* Links em cards e seções */
+.servico-card .text-link,
+.produto-card .text-link {
+    margin-top: 15px;
+    display: inline-block;
+}
+
+/* Navegação de categorias de produtos */
+.categorias-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 30px 0;
+}
+
+.categoria-btn {
+    padding: 8px 20px;
+    background-color: transparent;
+    border: 1px solid var(--cor-cinza-medio);
+    color: var(--cor-texto);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.categoria-btn:hover,
+.categoria-btn.active {
+    background-color: var(--cor-destaque);
+    border-color: var(--cor-destaque);
+    color: var(--cor-branco);
+}
+
+/* Melhorias para legibilidade de texto */
+p, .intro-text, .manifesto {
+    font-weight: 400;
+    line-height: 1.8;
+    color: #333;
+    letter-spacing: 0.02em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #000;
+    letter-spacing: 0.05em;
+    line-height: 1.3;
+}
+
+/* Espaçamento melhorado para leitura */
+p {
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    margin-bottom: 1rem;
+}
+
+/* Ajustes para contraste e legibilidade */
+.bg-dark p, 
+.bg-dark .intro-text,
+.bg-dark h1,
+.bg-dark h2,
+.bg-dark h3,
+.bg-dark h4,
+.bg-dark h5,
+.bg-dark h6 {
+    color: var(--cor-branco);
+}
+
+.bg-dark .text-link {
+    color: var(--cor-branco);
+}
+
+.bg-dark .text-link::after {
+    background-color: var(--cor-branco);
+}
+
+/* Ajustes para links em dispositivos móveis */
+@media (max-width: 768px) {
+    nav ul li {
+        margin-left: 15px;
+    }
+    
+    nav ul li a {
+        font-size: 0.8rem;
+        padding: 5px 0;
+    }
+    
+    .cta-button, 
+    .instagram-button, 
+    .submit-button {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+    }
+    
+    .social-link {
+        margin-right: 15px;
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,117 @@
+/* Ajustes específicos para os links do menu na página inicial */
+
+/* Tamanho e formato dos links do menu principal */
+nav ul li a {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+    padding: 8px 12px;
+    color: var(--cor-texto);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Ajuste para melhor encaixe visual com os ícones */
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+nav ul li {
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Destaque para link ativo */
+nav ul li a.active,
+nav ul li a:hover {
+    color: var(--cor-destaque);
+}
+
+/* Botão de destaque no menu */
+.nav-destaque {
+    border: 1px solid var(--cor-destaque);
+    padding: 8px 16px;
+    border-radius: 0;
+    margin-left: 10px;
+}
+
+.nav-destaque:hover {
+    background-color: var(--cor-destaque);
+    color: var(--cor-branco);
+}
+
+/* Ajustes responsivos para o menu */
+@media (max-width: 1024px) {
+    nav ul li a {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin: 5px;
+    }
+    
+    nav ul li a {
+        font-size: 0.75rem;
+        padding: 5px 8px;
+    }
+    
+    .nav-destaque {
+        margin-left: 0;
+    }
+}
+
+/* Ajustes para o logo */
+.logo {
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 100%;
+    width: auto;
+}
+
+/* Ajustes para o header */
+header {
+    padding: 15px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Animação sutil para os links */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--cor-destaque);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover::after {
+    width: 80%;
+}
